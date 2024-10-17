@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "productName"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "isFeatured": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "Rojo",
+        "Rosa",
+        "Azul",
+        "Blanco",
+        "Negro"
+      ],
+      "default": "Rojo"
+    },
+    "estilo": {
+      "type": "enumeration",
+      "enum": [
+        "Sport",
+        "Vintage",
+        "Glam",
+        "Grunge",
+        "Preppy",
+        "Boho",
+        "Streetwear"
+      ],
+      "default": "Vintage"
+    }
+  }
+}
